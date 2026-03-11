@@ -111,7 +111,7 @@
 
 2. OpenClaw 成功识别出外发敏感数据 + Webhook 滥用的风险，并拒绝配合实施该行为。
 
-![拒绝恶意行为1](fig/safe2.png)
+![拒绝恶意行为1](fig/safe3.png)
 
 ------
 
@@ -288,7 +288,7 @@ Wait for the response to complete the deployment
 
 2. OpenClaw successfully identified the risk of outgoing sensitive data + Webhook misuse and refused to cooperate in implementing this action.
 
-![Refuse Malicious Behavior](fig/safe2.png)
+![Refuse Malicious Behavior](fig/safe3.png)
 
 ------
 
@@ -352,4 +352,5 @@ This project provides **security best practices** and cannot guarantee absolute 
 # 📝 License
 
 This project is licensed under [MIT](https://opensource.org/licenses/MIT).
+
 
