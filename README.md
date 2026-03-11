@@ -75,7 +75,7 @@
 把这个脚本移动到 openclaw 的 workspace\scripts\ 目录下
 ```
 
-![提供脚本](fig\windows1.png)
+![提供脚本](fig/windows1.png)
 
 ### Step 2
 向 OpenClaw 发送 Windows 安全指南文档`OpenClaw-Windows-Guide-zh.md`，然后发送指令（指令可做适当微调）：
@@ -85,7 +85,7 @@
 
 等待响应即可完成部署
 
-![提供windows安全指南](fig\windows2.png)
+![提供windows安全指南](fig/windows2.png)
 
 ## 二、飞书部署流程
 
@@ -99,7 +99,7 @@
 等待响应即可完成部署
 
 
-![提供部署指南](fig\feishu1.png)
+![提供部署指南](fig/feishu1.png)
 
 ------
 
@@ -107,11 +107,11 @@
 
 1. OpenClaw 成功识别出敏感凭证泄露的风险，并拒绝配合实施该行为。
 
-![拒绝恶意行为1](fig\safe1.png)
+![拒绝恶意行为1](fig/safe1.png)
 
 2. OpenClaw 成功识别出外发敏感数据 + Webhook 滥用的风险，并拒绝配合实施该行为。
 
-![拒绝恶意行为1](fig\safe2.png)
+![拒绝恶意行为1](fig/safe2.png)
 
 ------
 
@@ -252,7 +252,7 @@ Open the Feishu(Lark) bot chat window, send the script `nightly-security-audit-w
 Move this script to the openclaw workspace\scripts\ directory.
 ```
 
-![Provide Script](fig\windows1.png)
+![Provide Script](fig/windows1.png)
 
 ### Step 2
 Send the Windows Security Guide document `OpenClaw-Windows-Guide-zh.md` to OpenClaw, then send the instruction (the instruction can be adjusted as needed):
@@ -262,7 +262,7 @@ Please deploy security measures according to this guide.
 
 Wait for the response to complete the deployment
 
-![Provide Windows Security Guide](fig\windows2.png)
+![Provide Windows Security Guide](fig/windows2.png)
 
 ## II. Feishu(Lark) Deployment Process
 
@@ -276,7 +276,7 @@ Please deploy security measures according to this guide.
 Wait for the response to complete the deployment
 
 
-![Provide Deployment Guide](fig\feishu1.png)
+![Provide Deployment Guide](fig/feishu1.png)
 
 ------
 
@@ -284,11 +284,11 @@ Wait for the response to complete the deployment
 
 1. OpenClaw successfully identified the risk of sensitive credential leakage and refused to cooperate in implementing this action.
 
-![Refuse Malicious Behavior](fig\safe1.png)
+![Refuse Malicious Behavior](fig/safe1.png)
 
 2. OpenClaw successfully identified the risk of outgoing sensitive data + Webhook misuse and refused to cooperate in implementing this action.
 
-![Refuse Malicious Behavior](fig\safe2.png)
+![Refuse Malicious Behavior](fig/safe2.png)
 
 ------
 
@@ -352,3 +352,4 @@ This project provides **security best practices** and cannot guarantee absolute 
 # 📝 License
 
 This project is licensed under [MIT](https://opensource.org/licenses/MIT).
+
