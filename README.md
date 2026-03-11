@@ -91,7 +91,7 @@
 
 ### Step 1
 
-打开飞书机器人聊天框，向 OpenClaw 发送飞书安全指南文档`OpenClaw-Windows-Guide-zh.md`，然后发送指令（指令可做适当微调）：
+打开飞书机器人聊天框，向 OpenClaw 发送飞书安全指南文档`OpenClaw-feishu-Guide-zh.md`，然后发送指令（指令可做适当微调）：
 ```
 请完全按照这份指南，为我部署安全措施。
 ```
@@ -352,5 +352,6 @@ This project provides **security best practices** and cannot guarantee absolute 
 # 📝 License
 
 This project is licensed under [MIT](https://opensource.org/licenses/MIT).
+
 
 
