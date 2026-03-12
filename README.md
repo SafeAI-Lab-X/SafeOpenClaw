@@ -38,7 +38,7 @@
 
 - 飞书（Feishu, Lark）
 - 钉钉（DingTalk） *（TODO：待补充文档）*
-- 微信 / 企业微信 *（TODO：待补充文档）*
+- QQ *（TODO：待补充文档）*
 
 ### 典型使用方式
 
@@ -215,7 +215,7 @@ This approach is suitable for the following OpenClaw runtime environments:
 
 - Feishu(Lark)
 - DingTalk *（TODO: Documentation to be added）*
-- WeChat / Enterprise WeChat *（TODO: Documentation to be added）*
+- QQ *（TODO: Documentation to be added）*
 
 ### Typical Usage Patterns
 
@@ -352,6 +352,7 @@ This project provides **security best practices** and cannot guarantee absolute 
 # 📝 License
 
 This project is licensed under [MIT](https://opensource.org/licenses/MIT).
+
 
 
 
