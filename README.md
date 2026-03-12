@@ -1,9 +1,186 @@
-# Safe OpenClaw: Windows/macOS x 飞书 / 钉钉 / QQ
+# Safe OpenClaw: Windows/macOS x Telegram / WhatsApp / Feishu(Lark) / Dingtalk / QQ
 
 [![OpenClaw](https://img.shields.io/badge/OpenClaw-Compatible-blue.svg)](https://github.com/openclaw/openclaw)[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)[![Language](https://img.shields.io/badge/Language-English%20%7C%20%E4%B8%AD%E6%96%87-success)](https://chatgpt.com/c/69b15db3-177c-8321-ad15-7a235e7cba78#)
 
+[中文文档](#chinese)
 ------
 
+# 🧠 Project Overview
+
+**Safe OpenClaw** provides a set of **simple yet effective security guidance** designed to reduce **security risks when OpenClaw agents run in real-world environments**.
+
+Unlike traditional security solutions that require **plugins / sandboxes / complex policy systems**, this project explores a simpler and more auditable approach:
+
+> **Define agent security rules directly using Markdown documents.**
+
+**OpenClaw** can **directly read these security guidelines and automatically deploy security policies**, significantly reducing user configuration costs.
+
+This approach is primarily designed to defend against the following **Agent-specific security risks**:
+
+- Prompt Injection
+- Destructive system operations
+- Skill / plugin supply chain poisoning
+- Sensitive information disclosure
+- Permission abuse
+- ...
+
+------
+
+# 🎯 Applicable Scenarios and Core Principles
+
+This approach is suitable for the following OpenClaw runtime environments:
+
+### System Environment
+
+- Windows
+- macOS *（TODO: Documentation to be added）*
+
+### Collaboration Platforms
+
+- Feishu(Lark)
+- DingTalk *（TODO: Documentation to be added）*
+- Telegram *（TODO: Documentation to be added）*
+- WhatsApp *（TODO: Documentation to be added）*
+- QQ *（TODO: Documentation to be added）*
+
+### Typical Usage Patterns
+
+- OpenClaw runs as an **automation assistant in high-privilege environments**
+- OpenClaw will **continuously install and use Skills / Scripts / Tools**
+- The goal is to achieve controllable risk and traceable audits while maximizing capabilities
+
+### Core Principles
+
+- **User-Friendly**: Minimal manual configuration burden on users
+- **High-Risk Prevention**: High-risk behaviors require user approval
+- **Regular Inspection and Reporting**: Regularly inspect and report core metrics to users
+
+------
+
+# ⚡ Minimal Deployment (Core Features)
+
+The core objective of this project is:
+
+> **Let the agent deploy security rules itself.**
+
+No need for:
+
+- Installing security plugins
+- Configuring complex policies
+- Modifying agent framework code
+
+## I. Windows Deployment Process
+
+### Step 1
+
+Open the Feishu(Lark) bot chat window, send the script `nightly-security-audit-windows.ps1` to OpenClaw, then send the instruction:
+```
+Move this script to the openclaw workspace\scripts\ directory.
+```
+
+![Provide Script](fig/windows1.png)
+
+### Step 2
+Send the Windows Security Guide document `OpenClaw-Windows-Guide-en.md` to OpenClaw, then send the instruction (the instruction can be adjusted as needed):
+```
+Please deploy security measures according to this guide.
+```
+
+Wait for the response to complete the deployment
+
+![Provide Windows Security Guide](fig/windows2.png)
+
+## II. Feishu(Lark) Deployment Process
+
+### Step 1
+
+Open the Feishu(Lark) bot chat window, send the Feishu(Lark) Security Guide document `OpenClaw-feishu-Guide-en.md` to OpenClaw, then send the instruction (the instruction can be adjusted as needed):
+```
+Please deploy security measures according to this guide.
+```
+
+Wait for the response to complete the deployment
+
+
+![Provide Deployment Guide](fig/feishu1.png)
+
+------
+
+# 🔪 Test Example
+
+1. OpenClaw successfully identified the risk of sensitive credential leakage and refused to cooperate in implementing this action.
+
+![Refuse Malicious Behavior](fig/safe1.png)
+
+2. OpenClaw successfully identified the risk of outgoing sensitive data + Webhook misuse and refused to cooperate in implementing this action.
+
+![Refuse Malicious Behavior](fig/safe3.png)
+
+------
+
+# 📂 Project Structure
+
+```
+SafeOpenClaw
+│
+├─ docs
+│   ├─ OpenClaw-feishu-Security-Guide-en.md
+│   ├─ OpenClaw-feishu-Security-Guide-zh.md
+│   └─ OpenClaw-Windows-Security-Guide-en.md
+│   └─ OpenClaw-Windows-Security-Guide-zh.md
+├─ script
+│   └─ nightly-security-audit-windows.ps1
+│
+└─ README.md
+```
+
+------
+
+# 📄 Core File Description
+
+## [Feishu(Lark) Security Guide](docs/OpenClaw-feishu-Guide-zh.md)
+
+- Behavior Red/Yellow Line Control (Sensitive data outflow, Webhook abuse and other red-line behaviors require manual approval, reading user information and other yellow-line behaviors are allowed but require audit logging)
+- Supply Chain Security Audit (Skill installation review, offline audit of all files, scanning for token extraction, contact/document data transmission risks, etc.)
+- Message and Permission Information Leakage Prevention (Scan for sensitive information before sending, limit message targets, permission control)
+- Interaction Logs and Inspection (Record interaction history, generate security status reports every 6 hours)
+
+------
+
+## [Windows Security Guide](docs/OpenClaw-Windows-Guide-zh.md)
+
+- Behavior Red/Yellow Line Control (Credential tampering, data outflow, privilege persistence and other red-line behaviors require manual approval, privilege escalation, software installation and other yellow-line behaviors are allowed but require audit logging)
+- Supply Chain Security Audit (Skill installation review, offline audit of all files, scanning for prompt injection, dependency installation inducement risks, etc.)
+- Critical File Integrity Protection (Establish SHA256 baseline for core configuration)
+- Automated Security Inspection (Establish daily inspection tasks)
+
+------
+
+## [Windows Security Scan Script](docs/OpenClaw-Windows-Guide-zh.md)
+
+- Contains 12 types of security audits including OpenClaw deep audit, port and process monitoring, file integrity baseline, OpenClaw scheduled task detection, etc.
+
+------
+
+# ⚠ Disclaimer
+
+This project provides **security best practices** and cannot guarantee absolute system security.
+
+------
+
+# 📕 References
+
+- OpenClaw Minimal Security Practice Guide
+  [https://github.com/slowmist/openclaw-security-practice-guide]((https://github.com/slowmist/openclaw-security-practice-guide))
+
+------
+
+# 📝 License
+
+This project is licensed under [MIT](https://opensource.org/licenses/MIT).
+
+
+<a id="chinese"></a>
 # 🧠 项目简介
 
 **Safe OpenClaw** 提供一套 **极简但有效的安全指导方案**，用于降低 **OpenClaw 智能体在真实环境运行时的安全风险**。
@@ -38,6 +215,8 @@
 
 - 飞书（Feishu, Lark）
 - 钉钉（DingTalk） *（TODO：待补充文档）*
+- Telegram *（TODO：待补充文档）*
+- WhatsApp *（TODO：待补充文档）*
 - QQ *（TODO：待补充文档）*
 
 ### 典型使用方式
@@ -179,179 +358,7 @@ SafeOpenClaw
 
 
 
-------
 
-# 🧠 Project Overview
-
-**Safe OpenClaw** provides a set of **simple yet effective security guidance** designed to reduce **security risks when OpenClaw agents run in real-world environments**.
-
-Unlike traditional security solutions that require **plugins / sandboxes / complex policy systems**, this project explores a simpler and more auditable approach:
-
-> **Define agent security rules directly using Markdown documents.**
-
-**OpenClaw** can **directly read these security guidelines and automatically deploy security policies**, significantly reducing user configuration costs.
-
-This approach is primarily designed to defend against the following **Agent-specific security risks**:
-
-- Prompt Injection
-- Destructive system operations
-- Skill / plugin supply chain poisoning
-- Sensitive information disclosure
-- Permission abuse
-- ...
-
-------
-
-# 🎯 Applicable Scenarios and Core Principles
-
-This approach is suitable for the following OpenClaw runtime environments:
-
-### System Environment
-
-- Windows
-- macOS *（TODO: Documentation to be added）*
-
-### Collaboration Platforms
-
-- Feishu(Lark)
-- DingTalk *（TODO: Documentation to be added）*
-- QQ *（TODO: Documentation to be added）*
-
-### Typical Usage Patterns
-
-- OpenClaw runs as an **automation assistant in high-privilege environments**
-- OpenClaw will **continuously install and use Skills / Scripts / Tools**
-- The goal is to achieve controllable risk and traceable audits while maximizing capabilities
-
-### Core Principles
-
-- **User-Friendly**: Minimal manual configuration burden on users
-- **High-Risk Prevention**: High-risk behaviors require user approval
-- **Regular Inspection and Reporting**: Regularly inspect and report core metrics to users
-
-------
-
-# ⚡ Minimal Deployment (Core Features)
-
-The core objective of this project is:
-
-> **Let the agent deploy security rules itself.**
-
-No need for:
-
-- Installing security plugins
-- Configuring complex policies
-- Modifying agent framework code
-
-## I. Windows Deployment Process
-
-### Step 1
-
-Open the Feishu(Lark) bot chat window, send the script `nightly-security-audit-windows.ps1` to OpenClaw, then send the instruction:
-```
-Move this script to the openclaw workspace\scripts\ directory.
-```
-
-![Provide Script](fig/windows1.png)
-
-### Step 2
-Send the Windows Security Guide document `OpenClaw-Windows-Guide-zh.md` to OpenClaw, then send the instruction (the instruction can be adjusted as needed):
-```
-Please deploy security measures according to this guide.
-```
-
-Wait for the response to complete the deployment
-
-![Provide Windows Security Guide](fig/windows2.png)
-
-## II. Feishu(Lark) Deployment Process
-
-### Step 1
-
-Open the Feishu(Lark) bot chat window, send the Feishu(Lark) Security Guide document `OpenClaw-feishu-Guide-en.md` to OpenClaw, then send the instruction (the instruction can be adjusted as needed):
-```
-Please deploy security measures according to this guide.
-```
-
-Wait for the response to complete the deployment
-
-
-![Provide Deployment Guide](fig/feishu1.png)
-
-------
-
-# 🔪 Test Example
-
-1. OpenClaw successfully identified the risk of sensitive credential leakage and refused to cooperate in implementing this action.
-
-![Refuse Malicious Behavior](fig/safe1.png)
-
-2. OpenClaw successfully identified the risk of outgoing sensitive data + Webhook misuse and refused to cooperate in implementing this action.
-
-![Refuse Malicious Behavior](fig/safe3.png)
-
-------
-
-# 📂 Project Structure
-
-```
-SafeOpenClaw
-│
-├─ docs
-│   ├─ OpenClaw-feishu-Security-Guide-en.md
-│   ├─ OpenClaw-feishu-Security-Guide-zh.md
-│   └─ OpenClaw-Windows-Security-Guide-en.md
-│   └─ OpenClaw-Windows-Security-Guide-zh.md
-├─ script
-│   └─ nightly-security-audit-windows.ps1
-│
-└─ README.md
-```
-
-------
-
-# 📄 Core File Description
-
-## [Feishu(Lark) Security Guide](docs/OpenClaw-feishu-Guide-zh.md)
-
-- Behavior Red/Yellow Line Control (Sensitive data outflow, Webhook abuse and other red-line behaviors require manual approval, reading user information and other yellow-line behaviors are allowed but require audit logging)
-- Supply Chain Security Audit (Skill installation review, offline audit of all files, scanning for token extraction, contact/document data transmission risks, etc.)
-- Message and Permission Information Leakage Prevention (Scan for sensitive information before sending, limit message targets, permission control)
-- Interaction Logs and Inspection (Record interaction history, generate security status reports every 6 hours)
-
-------
-
-## [Windows Security Guide](docs/OpenClaw-Windows-Guide-zh.md)
-
-- Behavior Red/Yellow Line Control (Credential tampering, data outflow, privilege persistence and other red-line behaviors require manual approval, privilege escalation, software installation and other yellow-line behaviors are allowed but require audit logging)
-- Supply Chain Security Audit (Skill installation review, offline audit of all files, scanning for prompt injection, dependency installation inducement risks, etc.)
-- Critical File Integrity Protection (Establish SHA256 baseline for core configuration)
-- Automated Security Inspection (Establish daily inspection tasks)
-
-------
-
-## [Windows Security Scan Script](docs/OpenClaw-Windows-Guide-zh.md)
-
-- Contains 12 types of security audits including OpenClaw deep audit, port and process monitoring, file integrity baseline, OpenClaw scheduled task detection, etc.
-
-------
-
-# ⚠ Disclaimer
-
-This project provides **security best practices** and cannot guarantee absolute system security.
-
-------
-
-# 📕 References
-
-- OpenClaw Minimal Security Practice Guide
-  [https://github.com/slowmist/openclaw-security-practice-guide]((https://github.com/slowmist/openclaw-security-practice-guide))
-
-------
-
-# 📝 License
-
-This project is licensed under [MIT](https://opensource.org/licenses/MIT).
 
 
 
